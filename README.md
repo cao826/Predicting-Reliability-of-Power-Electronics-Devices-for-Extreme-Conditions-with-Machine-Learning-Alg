@@ -6,5 +6,3 @@ Here I will leave a description of the project. There will be other readme files
 2. MY implementation of the traditional ML version of the prediction task.
 
 
-Will this work?
-And will it work the other way?
