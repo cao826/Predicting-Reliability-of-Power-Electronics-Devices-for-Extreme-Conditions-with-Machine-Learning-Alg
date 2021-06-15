@@ -1,8 +1,23 @@
-# Main README
+# Final Project Name TBA
 
-Here I will leave a description of the project. There will be other readme files that are specific to different parts of the project. Right now I am working on: 
+This repo contains all of the necessary scripts to boht recreate the results presented in the original paper and use the code as a base to create your own predictions. 
+There are subdirectories here for making predictions with:
 
-1. Deep learning versions of the prediction task
-2. MY implementation of the traditional ML version of the prediction task.
+1. An encoder-decoder model
+2. Gradient Boosting models
+3. Multimodal LSTM models
 
+## Requirements
+
+To use this repository, please ensure that you meet the requirements below, as listed by ```pipreq```
+
+```bash
+numpy==1.19.1
+scipy==1.4.1
+tqdm==4.59.0
+pandas==1.1.0
+matplotlib==3.2.2
+tensorflow==2.2.0
+scikit_learn==0.24.2
+```
 
