@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 import grading_systems_module as grad
 from sklearn import metrics
 
-predicted_curves_orig_path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Spring_2021/notebooks_scripts_and_code/all_devices_predicted_curves.pickle"
+predicted_curves_path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Spring_2021/notebooks_scripts_and_code/all_devices_predicted_curves.pickle"
 
-with open(predicted_curves_orig_path, 'rb') as f:
+with open(predicted_curves_path, 'rb') as f:
     orig_predicted_curves = pickle.load(f)
 
-new_data_path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Summer_2021/data/modeling-data.csv"
+data_path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Summer_2021/data/modeling-data.csv"
 
-new_data = pd.read_csv(new_data_path)
+new_data = pd.read_csv(data_path)
 fluences = [float(column.split(' ')[-2]) for column in new_data.columns[-51:-1]]
 
 bad_count = 0
