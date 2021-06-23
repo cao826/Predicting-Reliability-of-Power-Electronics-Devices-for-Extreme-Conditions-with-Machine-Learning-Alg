@@ -1,3 +1,6 @@
+import os
+import sys
+import warnings
 import numpy as np
 import tensorflow.keras as keras
 import pickle
@@ -6,6 +9,28 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, LSTM, Dense
 from tensorflow.keras.layers import LeakyReLU
+
+def check_path(path):
+    """ Checks if the pathh specified by the user is a path
+    Arguments:
+        path: path specified by user
+    Returns:
+        None
+    """
+    if (not os.path.isfile(path)):
+        raise Exception('The path specified is not a path.')
+
+def check_if_correct_table(dataframe):
+    """ Checks if the resulting dataframe read in from the path is the right data for encoder-decoder
+    Arguments:
+        dataframe: parameter type
+    Returns:
+        None
+    """
+    if (not dataframe.columns[0] == 'Unnamed: 0'):
+        raise Exception("The dataframe you read is not the correct one for this script. Please double check that you inputted the path to the dataset for deep learning, and not traditional learning.")
+
+
 
 def device_ids_with_k(k, device_ids):
     """ From a list of device ids, returns a testing set of all k type devices (A_1, B_1, etc.)

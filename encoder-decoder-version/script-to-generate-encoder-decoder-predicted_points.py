@@ -1,3 +1,5 @@
+import os
+import argparse as arg
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
@@ -9,9 +11,18 @@ import tensorflow.keras as keras
 import pickle
 import matplotlib.pyplot as plt
 
-path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Summer_2021/data/modeling-data-encoder-decoder-format.csv"
+parser = arg.ArgumentParser(description="Produces predicted points with LSTM based encoder-decoder models.")
+parser.add_argument('Path',
+        metavar='path',
+        type=str,
+        help='Path to the data for deep learning')
 
+args = parser.parse_args()
+path = args.Path
+enc.check_path(path)
 data = pd.read_csv(path)
+enc.check_if_correct_table(data)
+
 new_columns = data.columns.values
 new_columns[0] = 'index'
 data.columns = new_columns

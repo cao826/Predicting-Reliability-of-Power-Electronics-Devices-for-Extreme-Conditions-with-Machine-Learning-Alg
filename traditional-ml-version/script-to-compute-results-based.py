@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import grading_systems_module as grad
 from sklearn import metrics
 
-predicted_curves_path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Spring_2021/notebooks_scripts_and_code/all_devices_predicted_curves.pickle"
+predicted_curves_path = "anon-pred-curves.pickle"
 
 with open(predicted_curves_path, 'rb') as f:
     orig_predicted_curves = pickle.load(f)
