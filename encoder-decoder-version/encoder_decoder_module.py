@@ -18,7 +18,7 @@ def check_path(path):
         None
     """
     if (not os.path.isfile(path)):
-        raise Exception('The path specified is not a path.')
+        raise Exception('The path specified does not point to a file')
 
 def check_if_correct_table(dataframe):
     """ Checks if the resulting dataframe read in from the path is the right data for encoder-decoder
