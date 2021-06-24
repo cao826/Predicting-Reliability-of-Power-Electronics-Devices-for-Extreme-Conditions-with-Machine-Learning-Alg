@@ -8,7 +8,7 @@ from tqdm import tqdm
 import gradboost_module as gmod
 import grading_systems_module as grad
 
-parser = arg.ArgumentParser(description="Produces predicted points with LSTM based encoder-decoder models.")
+parser = arg.ArgumentParser(description="Produces predicted points with Gradient Boosting models.")
 parser.add_argument('Path',
         metavar='path',
         type=str,
