@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import argparse as arg
 import pickle
 import matplotlib.pyplot as plt
 from sklearn import metrics
@@ -7,7 +8,14 @@ from tqdm import tqdm
 import gradboost_module as gmod
 import grading_systems_module as grad
 
-path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Summer_2021/data/modeling-data.csv"
+parser = arg.ArgumentParser(description="Produces predicted points with LSTM based encoder-decoder models.")
+parser.add_argument('Path',
+        metavar='path',
+        type=str,
+        help='Path to the data for deep learning')
+
+args = parser.parse_args()
+path = args.Path
 
 data_w_labels = pd.read_csv(path)
 fluences = [float(column.split(' ')[-2]) for column in data_w_labels.columns[-51:-1]]
