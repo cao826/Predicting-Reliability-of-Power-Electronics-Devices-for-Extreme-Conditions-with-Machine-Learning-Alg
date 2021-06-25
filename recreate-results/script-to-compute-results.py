@@ -1,18 +1,28 @@
+import sys
 import pandas as pd
 import numpy as np
+import argparse as arg
 from tqdm import tqdm
 import pickle
 import matplotlib.pyplot as plt
-import grading_systems_module as grad
 from sklearn import metrics
+sys.path.insert(1, "../traditional-ml-version")
+import grading_systems_module as grad
+
 
 predicted_curves_path = "anon-pred-curves.pickle"
 
 with open(predicted_curves_path, 'rb') as f:
     orig_predicted_curves = pickle.load(f)
 
-data_path = "/Users/calchuchesta/Box/Prime technical folder ML and AI work/Carlos's Folder/Summer_2021/data/modeling-data.csv"
+parser = arg.ArgumentParser(description="Computes the results presented in the paper using the predicted curves from the experiment in the paper.")
+parser.add_argument('Path',
+        metavar='path',
+        type=str,
+        help='Path to the data for deep learning')
 
+args = parser.parse_args()
+data_path = args.Path
 new_data = pd.read_csv(data_path)
 fluences = [float(column.split(' ')[-2]) for column in new_data.columns[-51:-1]]
 
