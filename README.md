@@ -1,4 +1,4 @@
-# Final Project Name TBA
+# Predicting Reliability of Power Electronics Devices for Extreme Conditions with Machine Learning Algorithms
 
 This repo contains all of the necessary scripts to both recreate the results presented in the original paper and use the code as a base to create your own predictions. 
 
