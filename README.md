@@ -29,6 +29,7 @@ This project has four subdirectories:
 2. traditional-ml-version: Predicts stress response curves with Gradient Boosting models and evaluates them according to all of the different methodologies discussed in the paper.
 3. Multimodal LSTM models: Do we still want to keep this? I only mention these models tangentially in the paper, and none of their results are shown, although I probably do want to include that (?)
 4. recreate-results: This module contains a script which you can run to recreate the results presented in the paper. 
+5. direct-pf-prediction: This sub-directory allows the user to predict the pass/fail status of a device directly. It also generates a box plot of accuracies by manufacturer, and both forms of PCA.
 ## Accessing Data
 
 The data needed for this project is included in the repository, in the ```data``` directory. 
@@ -69,4 +70,12 @@ In the ```recreate-results``` subdirectory, run
 
 ```bash
 python script-to-compute-results.py PATH-TO-DATA/modeling-data.csv
+```
+
+### Driect P/F Prediction
+
+In the ```direct-pf-prediction``` subdirectory, run
+
+```bash
+python nscript.py PATH-TO-DATA/ndevice-pipeline.xlsx
 ```
