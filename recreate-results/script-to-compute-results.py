@@ -47,6 +47,8 @@ print('bad curves: {}'.format(bad_count))
 print('good curves: {}'.format(good_count))
 print('Total: {}'.format(good_count + bad_count))
 
+print('Bad curve detection: {}'.format(good_count/223))
+
 # umm
 
 ture_vals = new_data['Fail/Not'].values
@@ -91,7 +93,7 @@ for device in orig_predicted_curves.keys():
         curve_status.append('Bad')
 
 
-print(good_count)
+print('Hard Grading: {}'.format(good_count/223))
 
 # andrew's grading 
 
